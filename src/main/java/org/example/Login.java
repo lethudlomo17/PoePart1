@@ -52,7 +52,7 @@ public class Login {
         }
         else return true;
     }
-    public    String registerUser(String name, String password){
+    public    String registerUser(String firtsame, String lastname ,String name, String password){
         boolean correctUserName= checkUserName(name);
         boolean correctPassword= checkPasswordComplexity(password) ;
         //check username and password
@@ -71,12 +71,12 @@ public class Login {
             System.out.println("Password successfully captured");
             System.out.println("You have been registered successfully");
 
-            return "Welcome  " + name + " " +
-                    "it is great to see you";
+            return "Welcome  " + firtsame + " " + lastname+
+                    " it is great to see you";
         }
     }
-    public  Boolean loginUser(String pass,String user){
-        if(savedname==user && savedname==pass)
+    public  Boolean loginUser(String user,String password){
+        if(savedname==user && savedpassword==password)
         {
             return true;
         }

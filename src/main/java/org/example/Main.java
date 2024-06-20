@@ -1,14 +1,18 @@
 package org.example;
 
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        String user="leth_";
-        String password="ABCDEFGHI,9";
-        String myAnswer;
+        JFrame frame = new JFrame();
 
-        Login login =new Login();
-        myAnswer = login.registerUser(user, password);
-        System.out.println(myAnswer);
+        String firstname= JOptionPane.showInputDialog("Enter your name");
+        String lastname= JOptionPane.showInputDialog("Enter your lastname");
+        String user= JOptionPane.showInputDialog("Enter your user name");
+        String password= JOptionPane.showInputDialog("Enter your password");
+
+        Login login= new Login();
+        System.out.println(login.registerUser(firstname,lastname,user,password));
+
     }
 }
