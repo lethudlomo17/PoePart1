@@ -11,6 +11,7 @@ public class Main {
         String user= JOptionPane.showInputDialog("Enter your user name");
         String password= JOptionPane.showInputDialog("Enter your password");
 
+
         Login login= new Login();
         System.out.println(login.registerUser(firstname,lastname,user,password));
 

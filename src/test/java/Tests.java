@@ -2,9 +2,10 @@ import org.example.Login;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class Tests {
 
-
+    //test for successful registration
     @Test
     public void goodRegistration(){
         String user="leth_g";
@@ -17,6 +18,7 @@ public class Tests {
 
     }
 
+    //test for correct username
     @Test
     public void goodUserName(){
         String user="leth_";
@@ -24,6 +26,7 @@ public class Tests {
         Assert.assertTrue(login.checkUserName(user));
     }
 
+    //test for incorrect username
     @Test
     public void badUserName(){
         String user="kyle !!!!!!! ";
@@ -31,6 +34,7 @@ public class Tests {
         Assert.assertFalse(login.checkUserName(user));
     }
 
+    //test for vaild password
     @Test
     public void goodPassword(){
         String password="Ch&&sec@ke99!";
@@ -38,6 +42,7 @@ public class Tests {
         Assert.assertTrue(login.checkPasswordComplexity(password));
     }
 
+    //test for invaild password
     @Test
     public void badPassword(){
         String password="password";
@@ -45,6 +50,7 @@ public class Tests {
         Assert.assertFalse(login.checkPasswordComplexity(password));
     }
 
+    //test for successful login
     @Test
     public void goodLogin(){
         String user="leth_";
@@ -54,6 +60,7 @@ public class Tests {
         Assert.assertTrue(login.loginUser(user,password));
     }
 
+    //test for unsuccessful login
     @Test
     public void badLogin(){
         String user="leth_";

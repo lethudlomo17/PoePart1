@@ -1,6 +1,5 @@
 package org.example;
 
-import javax.swing.*;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -10,16 +9,15 @@ import javax.swing.*;
  *
  * @Lethu Dlomo
  */
+
 public class Login {
 
-
-    String  savedname ="";
+    //-declaring variables
+    String  savedname ="lethu";
     String savedpassword="" ;
-    String username;
-    String password;
-    String name;
-    String surname;
 
+
+    //validate entered username
     public  boolean checkUserName(String user){
 
         if(!user.contains("_") ||  user.length()>5){
@@ -27,6 +25,7 @@ public class Login {
         }
         else return true;
     }
+    //validate entered password
     public  boolean checkPasswordComplexity(String password){
         if (password.length()<=8){
             return false;
@@ -52,7 +51,9 @@ public class Login {
         }
         else return true;
     }
-    public    String registerUser(String firtsame, String lastname ,String name, String password){
+    //checks if the username and password are vaild
+    //if vaild, user is registered. if not,returns necessary message
+    public    String registerUser(String firtsname, String lastname ,String name, String password){
         boolean correctUserName= checkUserName(name);
         boolean correctPassword= checkPasswordComplexity(password) ;
         //check username and password
@@ -71,10 +72,11 @@ public class Login {
             System.out.println("Password successfully captured");
             System.out.println("You have been registered successfully");
 
-            return "Welcome  " + firtsame + " " + lastname+
+            return "Welcome  " + firtsname + " " + lastname+
                     " it is great to see you";
         }
     }
+    //allows user to login if username and password are vaild or correct
     public  Boolean loginUser(String user,String password){
         if(savedname==user && savedpassword==password)
         {
@@ -85,6 +87,7 @@ public class Login {
         }
     }
 
+    //checks login status and returns necessary message
     public String returnLoginStatus(String user, String password){
         if(savedname==user && savedpassword==password)
         {
